@@ -2,51 +2,23 @@
 /*
 !Utilities Or Helper CSS
 */
-/* Hover Transistion */
-/* Custom scroll Bar */
-/* Custom Table scroll Bar */
-/* Custom scroll Bar Inner */
+@import "./assets/css/mixin";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
-
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  overflow-y: scroll;
-  /* width */
-  /* Track */
-  /* Handle */
-  /* Handle on hover */
+  @include customScrollbar();
   overflow: auto;
 }
-body::-webkit-scrollbar {
-  width: 5px;
-}
-body::-webkit-scrollbar-track {
-  background: rgba(153, 153, 153, 0.2);
-  border-radius: 5px;
-  width: 5px;
-}
-body::-webkit-scrollbar-thumb {
-  background: #f84f4f;
-  border-radius: 5px;
-  width: 5px;
-}
-body::-webkit-scrollbar-thumb:hover {
-  background: #74c247;
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
 html,
 body {
   overflow-x: hidden;
@@ -57,10 +29,7 @@ p {
   font-weight: 400;
   line-height: 22px;
   color: #424c60;
-}
-@media all and (max-width: 767px) {
-  p {
-    transition: 0.5s;
+  @include max-media-width(767) {
     font-size: 14px;
   }
 }
@@ -74,7 +43,6 @@ h6,
 p {
   margin-bottom: 0;
 }
-
 img,
 svg {
   max-width: 100%;
@@ -83,9 +51,10 @@ svg {
 a {
   color: unset;
   text-decoration: none;
-}
-a:hover {
-  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 ul {
@@ -143,23 +112,8 @@ button {
 button:hover {
   border: none;
 }
-
 table {
   width: 100%;
-}
-
-*::-moz-placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 160%;
-  color: #9ba2ab;
-}
-
-*:-ms-input-placeholder {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 160%;
-  color: #9ba2ab;
 }
 
 *::placeholder {
@@ -175,25 +129,19 @@ table {
   line-height: 160%;
   color: #9ba2ab;
 }
-
-::-moz-selection {
-  color: #ffffff;
-  background: #e65c6a;
-}
-
 ::selection {
   color: #ffffff;
   background: #e65c6a;
 }
-
 ::-moz-selection {
   color: #ffffff;
   background: #e65c6a;
 }
 
+//Grid Content
 .map_grid {
   display: grid;
   grid-template-columns: minmax(0, 400px) repeat(1, minmax(0, 1fr));
   align-items: start;
   gap: 20px 30px;
-}/*# sourceMappingURL=App.css.map */
+}

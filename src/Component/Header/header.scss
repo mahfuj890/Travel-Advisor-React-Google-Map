@@ -1,0 +1,32 @@
+@import "../../assets/css/mixin";
+.header_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 7px 12px;
+  padding: 10px 15px;
+  background-color: #3498db;
+  .logo_area {
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: white;
+      @include max-media-width(767) {
+        font-size: 18px;
+      }
+    }
+  }
+  .header_search_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    h4 {
+      font-size: 18px;
+      font-weight: 400;
+      color: white;
+    }
+  }
+}
